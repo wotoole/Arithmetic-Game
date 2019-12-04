@@ -1,0 +1,34 @@
+import random
+
+guesses = 0
+
+print('Welcome! What is your name?')
+name = input()
+
+print(''+name+', get ready to do some multiplication!')
+
+x = random.randint(0,10000)
+y = random.randint(0,10000)
+a = str(x)
+b = str(y)
+
+while guesses < 3:
+    print('What is the product of ' +a+ ' and ' +b+'?')
+    product = input()
+    product = int(product)
+    answer = x*y
+    answer = int(answer)
+    guesses += 1
+
+    if product != answer:
+        print('Sorry that answer is incorrect. Try again.')\
+        
+    if product == answer:
+        break
+
+if product != answer:
+    answer = str(answer)
+    print('Sorry,'+name+ 'the correct answer was: ' +answer+ '.')
+    
+if product == answer:
+    print('Congratulations, ' +name+ '! You calculated the correct answer!')
